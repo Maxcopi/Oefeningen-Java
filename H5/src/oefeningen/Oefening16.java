@@ -18,9 +18,8 @@ public class Oefening16 {
 		Scanner keyboard = new Scanner(System.in);
 		
 		short nummer, tijdSeconden, nummerSnelste, secondenSnelste, deelnemers;
-		byte afstand, aantalPlusUur;
+		byte aantalPlusUur;
 		
-		afstand = (byte)36;
 		aantalPlusUur = (byte)0;
 		secondenSnelste = (short)10000;
 		deelnemers = (short)0;

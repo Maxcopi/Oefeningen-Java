@@ -21,10 +21,9 @@ public class Oefening19 {
 		
 		
 		for(int y = grootte; y > 0; y--) {
-			for(int x = grootte; x > 0; x--) {
+			for(int x = y; x > 0; x--) {
 				System.out.print("@");
 			}
-			grootte -= 1;
 			System.out.print("\n");
 		}
 		

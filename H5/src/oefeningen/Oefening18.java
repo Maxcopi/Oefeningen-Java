@@ -12,13 +12,13 @@ public class Oefening18 {
 		Scanner keyboard = new Scanner(System.in);
 		
 		short getal;
-		int faculteit = 1;
 		
 		System.out.println("Geef een getal in");
 		getal = keyboard.nextShort();
 		
 		
 		while(getal != 0) {
+			int faculteit = 1;
 			for(short i = 1; i <= getal; i++) {
 				faculteit = faculteit * i;
 			}

@@ -21,8 +21,7 @@ public class Oefening13 {
 		while((getal > 100) || (getal <= 1)) {
 			if(getal > 100) {
 				System.out.println("Fout! Het getal moet kleiner zijn dan 100");
-			}
-			if(getal <= 1) {
+			} else {
 				System.out.println("Fout! Het getal moet groter zijn dan 1");
 			}
 			System.out.println("Geef een getal in tussen 1 en 100");

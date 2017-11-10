@@ -8,7 +8,7 @@ public class Opdracht6 {
 		boolean bool = true;
 		
 		
-		if (bool == true) {
+		if (bool) {
 			System.out.println("Het is waar");
 		} else {
 			System.out.println("Het is onwaar");

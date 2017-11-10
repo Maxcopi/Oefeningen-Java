@@ -23,52 +23,73 @@ Film1 € 4.5 1 dag Film2 € 3.75 2 dagen Film3 € 2.5 2 dagen Te betalen: € 10.75 G
 Extra: Zorg ervoor dat het gemiddelde wordt weergegeven met 2 decimalen.
 	 */
 	
-	/*
-	public static float berekenHuurPrijs(short speeltijd, short jaarUitgave) {
-		float huurPrijs;
-		if((genre.charAt(0) == '1')) {
-			huurprijs = 0.005 * speeltijd;
+	
+	public static float berekenHuurPrijs(char sterren, short jaarUitgave) {
+		float huurprijs = 0;
+		switch(sterren) {
+			case '5':
+			case '4':
+				huurprijs=4.5f;
+				break;
+			case '3':
+			case '2':
+				huurprijs=3.75f;
+				break;
+			case '1':
+				huurprijs=3.00f;
 		}
-		return huurPrijs;
+		if(jaarUitgave - 2017 > 10) {
+			huurprijs-=0.50;
+		}
+		return huurprijs;
 	}
 	
-	public static byte berekenHuurTijd(short genre) {
+	public static byte berekenHuurTijd(int genre, short jaarUitgave, char sterren) {
 		byte huurtijd;
+		if((2017 - jaarUitgave >= 2)||(sterren == '5')||(genre / 10000 == '5')) {
+			huurtijd = 1;
+		} else {
+			huurtijd = 2;
+		}
 		
+		return huurtijd;
 		
-		
-		//return huurTijd;
 	}
 	
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		
 		float prijsHuur;
-		short aantal, genrenummer, jaarUitgave, speeltijdMin;
+		short aantal, jaarUitgave, speeltijdMin;
+		int genrenummer;
 		byte huurTijd;
 		char sterren;
+		String text = new String();
 		
 		System.out.println("Geef het aantal films in");
 		aantal = keyboard.nextShort();
 		
 		for(int i = 1; i <= aantal; i++) {
+			System.out.println("Gegevens van film "+i);
 			System.out.println("Geef het aantal sterren in");
 			sterren = keyboard.next().charAt(0);
 			System.out.println("Geef het genrenummer in");
-			genrenummer = keyboard.nextShort();
+			genrenummer = keyboard.nextInt();
 			System.out.println("Wat was het jaar van de uitgave?");
 			jaarUitgave = keyboard.nextShort();
 			System.out.println("Geef de speeltijd in minuten");
 			speeltijdMin = keyboard.nextShort();
 			
-			//prijsHuur = berekenHuurPrijs(sterren, jaarUitgave);
-			huurTijd = berekenHuurTijd(genrenummer);
+			prijsHuur = berekenHuurPrijs(sterren, jaarUitgave);
+			huurTijd = berekenHuurTijd(genrenummer, jaarUitgave, sterren);
+			
+			text += "Film"+i+"\t"+"€"+prijsHuur+"\t"+huurTijd+" dagen";
+			text += "\n";
 		}
 		
-		
-		
+		System.out.println(text);
 		
 		keyboard.close();
 	}
-*/
+
 }

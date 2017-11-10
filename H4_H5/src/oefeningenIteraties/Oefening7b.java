@@ -12,10 +12,11 @@ public class Oefening7b {
 		
 		String naam = new String();
 		double percentage;
+		int studentnummer;
 		
-		for(int i = 1; i < 4; i++) {
-			System.out.println("Geef de naam van student "+i+" in");
-			naam = keyboard.next();
+		System.out.println("Geef de het nummer van de student in");
+		studentnummer = keyboard.nextInt();
+		while(studentnummer != 99 || studentnummer != 999) {
 			System.out.println("Geef het behaald percentage van " + naam);
 			percentage = keyboard.nextDouble();
 			
@@ -41,8 +42,10 @@ public class Oefening7b {
 					}
 				}
 			}
+			System.out.println("Geef de het nummer van de student in");
+			studentnummer = keyboard.nextInt();
 		}
-		
+		keyboard.close();
 
 	}
 
